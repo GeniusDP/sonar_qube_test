@@ -21,6 +21,8 @@ public class WebConfiguration implements WebMvcConfigurer {
   @Bean
   @Scope("prototype")
   public Bandwidth bandwidth() {
+    int a = 10;
+    System.out.println(a / 0);
     return Bandwidth.classic(bucketCapacity, Refill.intervally(bucketCapacity, Duration.ofMinutes(durationInMinutes)));
   }
 
